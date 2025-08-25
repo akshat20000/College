@@ -10,7 +10,7 @@ const {
   unenrollStudents,
 } = require('../controllers/classController');
 const { protect, authorizeRoles } = require('../middleware/authMiddleware');
-const {  moderateLimiter ,rolebasedLimiter} = require('../middleware/courseRateLimiters');
+const {  moderateLimiter ,rolebasedLimiter} = require('../middleware/rateLimiter');
 
 // Public route to get all classes (can add filters later)
 router.get('/',rolebasedLimiter, getClasses);

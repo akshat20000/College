@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { registerUser, loginUser } = require('../controllers/authControllers');
-const { rolebasedLimiter} = require('../middleware/courseRateLimiters');
+const { rolebasedLimiter} = require('../middleware/rateLimiter');
 
 // @route   POST /api/auth/register
 // @desc    Register a new user

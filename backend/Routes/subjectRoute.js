@@ -8,7 +8,7 @@ const {
   deleteSubject
 } = require('../controllers/subjectController');
 const { protect, authorizeRoles } = require('../middleware/authMiddleware');
-const { moderateLimiter ,rolebasedLimiter} = require('../middleware/courseRateLimiters');
+const { moderateLimiter ,rolebasedLimiter} = require('../middleware/rateLimiter');
 
 // Public route to get all subjects
 router.get('/', rolebasedLimiter,getSubjects);

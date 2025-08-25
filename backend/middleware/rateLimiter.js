@@ -1,17 +1,17 @@
 const rateLimit = require('express-rate-limit');
 const { ipKeyGenerator } = require('express-rate-limit');
-const  RedisStore  = require('rate-limit-redis')
+const  {RedisStore}  = require("rate-limit-redis")
 const { createClient } = require('redis')
 const { User } = require('../models/user'); 
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
 dotenv.config()
 
 const redisClient = createClient({
-  username: process.env.redis-username,
-  password: process.env.redis-password,
+  username: process.env["redis-username"],
+  password: process.env["redis-password"],
   socket: {
-    host:process.env.redis-host,
-    port: process.env.redis-port
+    host: process.env["redis-host"],
+    port: process.env["redis-port"]
   }
 });
 

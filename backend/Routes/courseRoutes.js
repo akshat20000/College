@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { getCourses, createCourse, getCourseById , updateCourse, deleteCourse} = require('../controllers/courseController');
 const { protect, authorizeRoles } = require('../middleware/authMiddleware');
-const { moderateLimiter,rolebasedLimiter } = require('../middleware/courseRateLimiters');
+const { moderateLimiter,rolebasedLimiter } = require('../middleware/rateLimiter');
 
 // Public route to get all courses (programs)
 router.get('/',rolebasedLimiter, getCourses);

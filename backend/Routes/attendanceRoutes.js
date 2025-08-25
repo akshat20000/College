@@ -8,7 +8,7 @@ const {
   updateAttendance,
   deleteAttendance,
 } = require('../controllers/attendanceController'); 
-const {  moderateLimiter ,rolebasedLimiter} = require('../middleware/courseRateLimiters');
+const { strictLimiter, moderateLimiter ,rolebasedLimiter} = require('../middleware/rateLimiter');
 
 // A route for marking new attendance
 router.post('/',protect,rolebasedLimiter,authorizeRoles('admin','teacher'),getAttendance);
